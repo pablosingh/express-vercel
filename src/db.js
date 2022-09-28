@@ -11,7 +11,8 @@ const {
 //   dialect: 'postgres',
 // });
 
-const database = process.env.DATABASE_URL || DB_URI;
+// const database = process.env.DATABASE_URL || DB_URI;
+const database = process.env.DB_URI;
 
 var db = new Sequelize(`${database}`, {
   logging: true, // set to console.log to see the raw SQL queries
