@@ -2,7 +2,7 @@ const Operation = require('./Operation.js');
 const { DataTypes } = require('sequelize');
 const { db } = require('../db');
 
-const Person = db.define('person', {
+const person = db.define('person', {
     id:{
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -17,14 +17,14 @@ const Person = db.define('person', {
     },
 });
 
-Person.hasMany(Operation, {
+person.hasMany(Operation, {
     foreinkey: "personId",
     sourceKey: "id",
   });
   
-Operation.belongsTo(Person, { 
+Operation.belongsTo(person, { 
     foreinkey: "personId", 
     targetId: "id" 
 });
 
-module.exports = Person;
+module.exports = person;

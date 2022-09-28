@@ -1,4 +1,4 @@
-const Person = require('../models/Person');
+const person = require('../models/person');
 
 const createPerson = async (req, res) => {
     await res.json({ msg: 'create person'});
