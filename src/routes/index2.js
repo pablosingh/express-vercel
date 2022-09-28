@@ -20,6 +20,7 @@ router.post('/createPerson', createPerson );
 // router.put('/editPerson', editPerson );
 // router.delete('/deletePerson', deletePerson );
 
-router.get('/', (req,res)=> res.json({ msg: "ok" }));
+const todo = process.env;
+router.get('/', (req,res)=> res.json({ msg: "ok", todo: todo}));
 
 module.exports = router;
