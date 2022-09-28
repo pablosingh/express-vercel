@@ -1,6 +1,6 @@
 
-const test = (req, res) => {
-    res.json({ message: "test" });
+const test = async (req, res) => {
+    await res.json({ message: "test" });
 };
 
 module.exports = test;
