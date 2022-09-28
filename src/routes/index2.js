@@ -6,7 +6,7 @@
 // const deleteOperation = require('./deleteOperation');
 // const editPerson = require('./editPerson');
 // const deletePerson = require('./deletePerson');
-const Test = require('./Test');
+const test = require('./Test');
 
 const { Router } = require('express');
 const router = Router();
@@ -24,6 +24,6 @@ const router = Router();
 const todo = process.env;
 router.get('/get', (req,res)=> res.json({ msg: "ok", todo: todo }));
 
-router.get('/test', Test );
+router.get('/test', test );
 
 module.exports = router;
