@@ -8,7 +8,7 @@ server.use(express.json());
 // server.use(express.urlencoded({ extended: true }));
 // server.use(express.static("public"));
 
-server.get('/', (req, res) => res.send('Hello World! 3'));
+server.get('/', (req, res) => res.send('Hello World! 33'));
 
 server.use( '/', routes );
 
@@ -32,7 +32,7 @@ server.use( '/', routes );
 //     );
 // });
 
-server.listen(port, async() => {
+server.listen(port, () => {
     console.log(' || listening at '+ port);
     }   
 );
