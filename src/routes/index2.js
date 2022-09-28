@@ -6,7 +6,7 @@
 // const deleteOperation = require('./deleteOperation');
 // const editPerson = require('./editPerson');
 // const deletePerson = require('./deletePerson');
-const test = require('./Test');
+const test = require('./test');
 
 const { Router } = require('express');
 const router = Router();
