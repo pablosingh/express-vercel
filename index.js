@@ -4,7 +4,7 @@ const routes = require('./src/routes/index.js');
 const port = process.env.PORT || 3000;
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('Hello World! Pablo'));
+app.get('/', (req, res) => res.send('Hello World! 2'));
 
 app.use( '/', routes );
 app.get('/get', (req,res)=> res.json({ msg: "ok" }));
