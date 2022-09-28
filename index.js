@@ -5,6 +5,7 @@ const routes = require('./src/routes/index2.js');
 const { db } = require('./src/db.js');
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+server.use(express.static("public"));
 
 server.get('/', (req, res) => res.send('Hello World! 3'));
 
