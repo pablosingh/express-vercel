@@ -16,21 +16,26 @@ server.use( '/', routes );
 //   console.log(`listening on port ${port}`)
 // })
 
-async function test() {
-    try {
-        await db.authenticate();
-        return 'Connection: OK';
-    } catch (error) {
-        return 'Error Connection: ' +error;
-    }
-};
+// async function test() {
+//     try {
+//         await db.authenticate();
+//         return 'Connection: OK';
+//     } catch (error) {
+//         return 'Error Connection: ' +error;
+//     }
+// };
 
-db.sync({ force: false }).then(() => {
-    server.listen(port, async() => {
-        console.log( await test() + ' || listening at '+ port);
-        }   
-    );
-});
+// db.sync({ force: false }).then(() => {
+//     server.listen(port, async() => {
+//         console.log( await test() + ' || listening at '+ port);
+//         }   
+//     );
+// });
+
+server.listen(port, async() => {
+    console.log(' || listening at '+ port);
+    }   
+);
 
 // if(process.env.NODE_ENV === 'production'){
 //     const path  =  require('path');
