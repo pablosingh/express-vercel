@@ -1,15 +1,30 @@
 const express = require('express')
-const app = express()
-const routes = require('./src/routes/index.js');
+const server = express()
 const port = process.env.PORT || 3000;
-app.use(express.json());
+const routes = require('./src/routes/index.js');
+const { db } = require('./src/db.js');
+server.use(express.json());
 
-app.get('/', (req, res) => res.send('Hello World! 2'));
+server.get('/', (req, res) => res.send('Hello World! 3'));
 
-app.use( '/', routes );
-app.get('/get', (req,res)=> res.json({ msg: "ok" }));
-app.get('/get2', (req,res)=> res.send('get 2 - send'));
+server.use( '/', routes );
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
-})
+// server.listen(port, () => {
+//   console.log(`listening on port ${port}`)
+// })
+
+async function test() {
+    try {
+        await db.authenticate();
+        return 'Connection: OK';
+    } catch (error) {
+        return 'Error Connection: ' +error;
+    }
+};
+
+db.sync({ force: false }).then(() => {
+    server.listen(port, async() => {
+        console.log( await test() + ' || listening at '+ port);
+        }   
+    );
+});
