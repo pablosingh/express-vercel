@@ -11,7 +11,9 @@ const {
 //   dialect: 'postgres',
 // });
 
-var db = new Sequelize(`${DB_URI}`, {
+const database = process.env.DATABASE_URL || DB_URI;
+
+var db = new Sequelize(`${database}`, {
   logging: true, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   dialect: 'postgres',
