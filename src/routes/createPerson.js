@@ -1,6 +1,6 @@
 const person = require('../models/person');
 
-const createPerson = async (req, res) => {
+const createperson = async (req, res) => {
     await res.json({ msg: 'create person'});
     // try{
     //     const { name, balance } = req.body;
@@ -14,4 +14,4 @@ const createPerson = async (req, res) => {
     // }
 };
 
-module.exports = createPerson;
+module.exports = createperson;
