@@ -1,4 +1,4 @@
-const Operation = require('../models/Operation.js');
+const Operation = require('./models/Operation.js');
 
 const createOp = async (req, res) => {
     try{
