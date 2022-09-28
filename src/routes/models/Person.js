@@ -1,4 +1,4 @@
-const Operation = require('./Operation.js');
+const operation = require('./operation.js');
 const { DataTypes } = require('sequelize');
 const { db } = require('../db');
 
@@ -17,12 +17,12 @@ const person = db.define('person', {
     },
 });
 
-person.hasMany(Operation, {
+person.hasMany(operation, {
     foreinkey: "personId",
     sourceKey: "id",
   });
   
-Operation.belongsTo(person, { 
+operation.belongsTo(person, { 
     foreinkey: "personId", 
     targetId: "id" 
 });

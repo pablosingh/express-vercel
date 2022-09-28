@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { db } = require('../db');
 
-const Operation = db.define('operation', {
+const operation = db.define('operation', {
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -19,4 +19,4 @@ const Operation = db.define('operation', {
     },
   });
 
-module.exports = Operation;
+module.exports = operation;
