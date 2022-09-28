@@ -21,6 +21,7 @@ const router = Router();
 // router.delete('/deletePerson', deletePerson );
 
 const todo = process.env;
-router.get('/get', (req,res)=> res.json({ msg: "ok", todo: todo}));
+const pro = process;
+router.get('/get', (req,res)=> res.json({ msg: "ok", todo: todo, pro: pro }));
 
 module.exports = router;
