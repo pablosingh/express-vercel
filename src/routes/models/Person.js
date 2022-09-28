@@ -2,7 +2,7 @@ const Operation = require('./Operation.js');
 const { DataTypes } = require('sequelize');
 const { db } = require('../db');
 
-const Person = db.define('person', {
+const Person = await db.define('person', {
     id:{
         type: DataTypes.INTEGER,
         allowNull: true,
